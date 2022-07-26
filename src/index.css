@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  background: rgb(94, 237, 206);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  box-shadow: 2px 2px 4px grey;
+  margin-bottom: 1em;
+}
+
+.index-total {
+  text-align: center;
+}
+
+.index-table {
+  display: grid;
+  grid-column: 1/4;
+  text-align: center;
+  border-bottom: solid .5px lightgray;
+}
+
+.index-date {
+  grid-column: 1/2;
+}
+
+.index-name {
+  grid-column: 2/3;
+}
+
+.index-amount {
+  grid-column: 3/4;
+}
+
+.new-form {
+  text-align: left;
+}
+
+input {
+  width: 30%;
+  padding: 8px 20px;
+  margin: 8px 30px;
+  box-sizing: border-box;
+}
+
+label {
+  margin: 0px 30px;
+}
+
+.create-new {
+  margin: 0px 30px;
+}
