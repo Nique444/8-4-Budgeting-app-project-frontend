@@ -29,7 +29,7 @@ export default function TransactionNewForm() {
         </div>
         <input placeholder="from" />
         <div>
-          <button className="create-new">Create New Item</button>
+          <button className="create-new" type="submit" class="btn btn-light">Create New Item</button>
         </div>
       </form>
     </div>
