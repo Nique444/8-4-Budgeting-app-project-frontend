@@ -18,7 +18,8 @@ export default function TransactionShow() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [index]);
+  
   return (
     <div>
       <h3>Item: {transaction.item_name}</h3>
