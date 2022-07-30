@@ -17,7 +17,7 @@ export default function TransactionNewForm() {
   const addTransaction = () => {
     axios
       .post(`${API}/transactions`, newTransaction)
-      .then((response) => navigate(`/transactions`))
+      .then((response) => navigate('/transactions'))
       .catch((error) => console.log(error));
   };
 
@@ -33,7 +33,6 @@ export default function TransactionNewForm() {
   return (
     <div>
       <form className="new-form" onSubmit={handleSubmit}>
-        <h2>Add a new item</h2>
         <div>
           <strong>
             <label for="date">Date</label>
