@@ -12,21 +12,22 @@ export default function TransactionNewForm() {
     from: "",
     category: "",
   });
+
   const navigate = useNavigate();
 
   const addTransaction = () => {
     axios
       .post(`${API}/transactions`, newTransaction)
-      .then((response) => navigate('/transactions'))
+      .then((response) => navigate("/transactions"))
       .catch((error) => console.log(error));
   };
 
   const handleSubmit = (e) => {
-    e.prevemtDefault();
+    e.preventDefault();
     addTransaction();
   };
 
-  const handleTextChange = (e) => {
+  const handleChange = (e) => {
     setNewTransaction({ ...newTransaction, [e.target.id]: e.target.value });
   };
 
@@ -35,25 +36,31 @@ export default function TransactionNewForm() {
       <form className="new-form" onSubmit={handleSubmit}>
         <div>
           <strong>
-            <label for="date">Date</label>
+            <label htmlFor="date">Date</label>
           </strong>
         </div>
-        <input type="date" name="date" id="date" placeholder="Date" />
+        <input
+          type="date"
+          name="date"
+          id="date"
+          onChange={handleChange}
+          placeholder="Date"
+        />
         <div>
           <strong>
-            <label for="name">Name</label>
+            <label htmlFor="name">Name</label>
           </strong>
         </div>
         <input
           type="text"
-          name="name"
-          id="name"
+          name="item_name"
+          id="item_name"
           placeholder="Name"
-          onChange={handleTextChange}
+          onChange={handleChange}
         />
         <div>
           <strong>
-            <label for="amount">Amount</label>
+            <label htmlFor="amount">Amount</label>
           </strong>
         </div>
         <input
@@ -62,11 +69,12 @@ export default function TransactionNewForm() {
           id="amount"
           min="0"
           max="20000"
+          onChange={handleChange}
           placeholder="Amount"
         />
         <div>
           <strong>
-            <label>From</label>
+            <label htmlFor="from">From</label>
           </strong>
         </div>
         <input
@@ -74,7 +82,7 @@ export default function TransactionNewForm() {
           name="from"
           id="from"
           placeholder="From"
-          onChange={handleTextChange}
+          onChange={handleChange}
         />
         <div>
           <button className="create-new" type="submit">

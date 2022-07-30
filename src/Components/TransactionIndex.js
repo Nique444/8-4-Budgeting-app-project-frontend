@@ -7,6 +7,7 @@ const API = process.env.REACT_APP_API_URL;
 
 export default function TransactionIndex() {
     const [transactions, setTransactions] = useState([]);
+    const [accountTotal, setAccountTotal] = useState(0);
 
     useEffect(() => {
       axios
@@ -14,6 +15,7 @@ export default function TransactionIndex() {
       .then((response) => {
         setTransactions(response.data);
         // console.log(response.data)
+        
       })
       .catch((error) => {
         console.log(error);
