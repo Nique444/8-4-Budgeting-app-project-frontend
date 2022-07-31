@@ -44,7 +44,7 @@ export default function TransactionNewForm() {
           name="date"
           id="date"
           onChange={handleChange}
-          placeholder="Date"
+          placeholder="mmm-dd-yyyy"
         />
         <div>
           <strong>
