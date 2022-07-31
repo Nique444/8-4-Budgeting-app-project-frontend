@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_API_URL;
 
 export default function TransactionIndex() {
     const [transactions, setTransactions] = useState([]);
-    const [accountTotal, setAccountTotal] = useState(0);
+    // const [accountTotal, setAccountTotal] = useState(0);
 
     useEffect(() => {
       axios
